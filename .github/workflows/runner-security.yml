@@ -1,0 +1,24 @@
+name: Runner Security Check
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  security-check:
+    runs-on: self-hosted
+
+    steps:
+      - name: Security message
+        run: echo Always use minimum permissions on self-hosted runners
+
+      - name: Check user
+        run: whoami
+
+      - name: Check machine
+        run: hostname
+
+      - name: Check folder
+        run: cd
